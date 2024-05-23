@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warner Bros. Collections</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom styles for the playlist player */
+        .playlist-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .playlist-item {
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .playlist-item:hover {
+            background-color: #0056b3;
+        }
+
+        /* Container for each button and video pair */
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .video-player {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+       
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="tv-shows.html">TV Shows</a></li>
+                <li><a href="games-apps.html">Games & Apps</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Harry Potter Collection</h2>
+            <p>
+
+                Movies:
+                
+                "Harry Potter and the Sorcerer's Stone" (2001)
+                "Harry Potter and the Chamber of Secrets" (2002)
+                "Harry Potter and the Prisoner of Azkaban" (2004)
+                "Harry Potter and the Goblet of Fire" (2005)
+                "Harry Potter and the Order of the Phoenix" (2007)
+                "Harry Potter and the Half-Blood Prince" (2009)
+                "Harry Potter and the Deathly Hallows – Part 1" (2010)
+                "Harry Potter and the Deathly Hallows – Part 2" (2011)
+                Books:
+                
+                "Harry Potter and the Sorcerer's Stone" (1997)
+                "Harry Potter and the Chamber of Secrets" (1998)
+                "Harry Potter and the Prisoner of Azkaban" (1999)
+                "Harry Potter and the Goblet of Fire" (2000)
+                "Harry Potter and the Order of the Phoenix" (2003)
+                "Harry Potter and the Half-Blood Prince" (2005)
+                "Harry Potter and the Deathly Hallows" (2007)
+                Merchandise:
+                
+                Hogwarts House scarves, ties, and robes
+                Wands of famous characters
+                Harry Potter LEGO sets
+                Hogwarts acceptance letter replicas
+                Marauder's Map replica
+                Harry Potter themed board games
+                Funko Pop! figures of Harry Potter characters
+                </p>
+        </section>
+        <section>
+            <h2>DC Universe Collection</h2>
+            <p>DC Universe Collection:
+
+                Movies:
+                
+                "Batman Begins" (2005)
+                "The Dark Knight" (2008)
+                "The Dark Knight Rises" (2012)
+                "Man of Steel" (2013)
+                "Batman v Superman: Dawn of Justice" (2016)
+                "Wonder Woman" (2017)
+                "Aquaman" (2018)
+                "Shazam!" (2019)
+                "Wonder Woman 1984" (2020)
+                "Zack Snyder's Justice League" (2021)
+                Comics:
+                
+                Various Batman comic series
+                Superman comic series
+                Wonder Woman comic series
+                The Flash comic series
+                Green Lantern comic series
+                Justice League comic series
+                DC Rebirth comic series
+                Collectibles:
+                
+                Action figures of iconic DC characters
+                Batman utility belts and gadgets
+                Superman capes and suits
+                Wonder Woman's tiara and lasso
+                Green Lantern power rings
+                Justice League themed chess set
+                DC Comics themed Monopoly board game.</p>
+        </section>
+        <section>
+            <h2>Warner Bros. Playlist Player</h2>
+            <div class="playlist-container">
+                <div class="playlist-item" onclick="playVideo(0)">Play Video 1</div>
+                <div class="playlist-item" onclick="playVideo(1)">Play Video 2</div>
+                <div class="playlist-item" onclick="playVideo(2)">Play Video 3</div>
+            </div>
+            <div class="video-container">
+                <video id="video-player1" class="video-player" controls>
+                    <source src="videos/d6.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-container">
+                <video id="video-player2" class="video-player" controls>
+                    <source src="videos/d4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-container">
+                <video id="video-player3" class="video-player" controls>
+                    <source src="videos/d8.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Warner Bros. Entertainment Inc.</p>
+    </footer>
+
+    <script>
+        // Function to play the selected video
+        function playVideo(index) {
+            var videoPlayer = document.getElementsByClassName('video-player')[index];
+            var sources = [
+                'videos/d6.mp4',
+                'videos/d4.mp4',
+                'videos/d8.mp4'
+            ];
+
+            // Change the video source and play it
+            videoPlayer.src = sources[index];
+            videoPlayer.play();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warner Bros. Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="tv-shows.html">TV Shows</a></li>
+                <li><a href="games-apps.html">Games & Apps</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>We value your feedback!</h2>
+            <form id="feedback-form" action="/submit-feedback" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <div id="name-error" class="error-message"></div>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <div id="email-error" class="error-message"></div>
+                <label for="feedback">Feedback:</label><br>
+                <textarea id="feedback" name="feedback" required></textarea><br>
+                <div id="feedback-error" class="error-message"></div>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Warner Bros. Entertainment Inc.</p>
+    </footer>
+
+    <script>
+        // Function to validate the form
+        function validateForm() {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const feedbackInput = document.getElementById('feedback');
+            const nameError = document.getElementById('name-error');
+            const emailError = document.getElementById('email-error');
+            const feedbackError = document.getElementById('feedback-error');
+
+            let isValid = true;
+
+            // Validate name
+            if (nameInput.value.trim() === '') {
+                nameError.textContent = 'Name is required';
+                isValid = false;
+            } else {
+                nameError.textContent = '';
+            }
+
+            // Validate email
+            if (emailInput.value.trim() === '') {
+                emailError.textContent = 'Email is required';
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            // Validate feedback
+            if (feedbackInput.value.trim() === '') {
+                feedbackError.textContent = 'Feedback is required';
+                isValid = false;
+            } else {
+                feedbackError.textContent = '';
+            }
+
+            return isValid;
+        }
+
+        // Submit form with validation
+        document.getElementById('feedback-form').addEventListener('submit', function(event) {
+            if (!validateForm()) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            } else {
+                // Simulate form submission for demonstration
+                alert('Feedback submitted successfully!');
+            }
+        });
+    </script>
+</body>
+</html>
